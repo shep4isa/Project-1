@@ -8,14 +8,15 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * `quotes` array 
+ * `Quotes array
+ * array of objects with properties quote, source, citation, and year
 ***/
 const quotes = [
   {
     quote: "Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.",
     source: "Michael Scott",
-    citation:"The Office",
-    year:"2005"
+    citation:"",
+    year:""
   },
   {
     quote:"Sometimes I'll start a sentence and I don't even know where it's going. I just hope I find it along the way.",
@@ -58,6 +59,7 @@ const quotes = [
 
 /***
  * `getRandomQuote` function
+ * gets random number and returns random quote from the quotes array
 ***/
 function getRandomQuote(){
   let rdmNum = Math.floor(Math.random() * quotes.length);
@@ -67,6 +69,10 @@ function getRandomQuote(){
 
 /***
  * `printQuote` function
+ * calls getRandomQuote assigns quote properties to html variable
+ * if statements check for optional properites and append spans to 
+ * html
+ * returns html
 ***/
 function printQuote(){
   let rdmQuote = getRandomQuote();
@@ -91,6 +97,7 @@ function printQuote(){
 
 /***
  * click event listener for the print quote button
+ * calls printQuote on buttom click
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
