@@ -63,6 +63,8 @@ const quotes = [
   }  
 ]
 
+// Initilize page to random quote
+printQuote();
 
 /***
  * `getRandomQuote` function
@@ -97,13 +99,13 @@ function printQuote(){
   let b = getRandomRGB();
   let html = `<p class="quote">${rdmQuote.quote}</p>
   <p class="source">${rdmQuote.source}`
-  if (rdmQuote.citation ){
+  if (rdmQuote.citation){
     html += `<span class="citation">${rdmQuote.citation}</span>`;
   }
   if (rdmQuote.year){
     html += `<span class="year">${rdmQuote.year}</span>`;
   }
-  if(rdmQuote.episode){
+  if (rdmQuote.episode){
     html += `<span class="year">${rdmQuote.episode }</span>`;
   } 
   html += `</p>`
