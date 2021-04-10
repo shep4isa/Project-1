@@ -85,7 +85,7 @@ function printQuote(){
   }else if (rdmQuote.citation){
     html += `<span class="citation">${rdmQuote.citation}</span>
     </p>`;
-  }else if(rdmQuote.source){
+  }else if(rdmQuote.year){
     html += `<span class="year">${rdmQuote.year}</span>
     </p>`;
   } else {
