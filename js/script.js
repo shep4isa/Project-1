@@ -15,13 +15,13 @@ const quotes = [
     quote: "Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.",
     source: "Michael Scott",
     citation:"The Office",
-    year:""
+    year:"2005"
   },
   {
     quote:"Sometimes I'll start a sentence and I don't even know where it's going. I just hope I find it along the way.",
     source: "Michael Scott",
     citation:"The Office",
-    year:""
+    year:"2009"
   },
   {
     quote:"I'm not superstitious, but I am a little stitious.",
@@ -33,25 +33,25 @@ const quotes = [
     quote:"I love inside jokes. I hope to be a part of one someday.",
     source: "Michael Scott",
     citation:"The Office",
-    year:""
+    year:"2006"
   },
   {
     quote:"I feel like all my kids grew up and then they married each other. It’s every parent’s dream.",
     source: "Michael Scott",
     citation:"The Office",
-    year:""
+    year:"2013"
   },
   {
     quote:"And I knew exactly what to do. But in a much more real sense, I had no idea what to do.",
     source: "Michael Scott",
     citation:"The Office",
-    year:""
+    year:"2009"
   },
   {
     quote:"I… Declare…. Bankruptcy!",
     source: "Michael Scott",
     citation:"The Office",
-    year:""
+    year:"2007"
   }  
 ]
 
@@ -59,13 +59,34 @@ const quotes = [
 /***
  * `getRandomQuote` function
 ***/
-
+function getRandomQuote(){
+  let rdmNum = Math.floor(Math.random() * quotes.length);
+  return quotes[rdmNum];
+}
 
 
 /***
  * `printQuote` function
 ***/
-
+function printQuote(){
+  let rdmQuote = getRandomQuote();
+  let html = `<p class="quote">${rdmQuote.quote}</p>
+  <p class="source">${rdmQuote.source}`
+  if (rdmQuote.citation && rdmQuote.year){
+    html += `<span class="citation">${rdmQuote.citation}</span>
+    <span class="year">${rdmQuote.year}</span>
+    </p>`;
+  }else if (rdmQuote.citation){
+    html += `<span class="citation">${rdmQuote.citation}</span>
+    </p>`;
+  }else if(rdmQuote.source){
+    html += `<span class="year">${rdmQuote.year}</span>
+    </p>`;
+  } else {
+    html += `</p>`
+  }
+  document.getElementById('quote-box').innerHTML = html; 
+}
 
 
 /***
